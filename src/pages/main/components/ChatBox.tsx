@@ -9,7 +9,7 @@ const ChatBox = ({ chatData }: { chatData: { id: string, user: string, data: str
     const { userData } = useContext(AuthContext) as AuthContextType;
     const isUser = userData?.username === chatData.user
     return (
-        <article className={cn("p-3 flex gap-x-3 rounded-md border-2 group", isUser && "flex-row-reverse ml-auto", isUser ? "bg-primary-600 text-white border-white" : "bg-white text-primary-600 border-primary-600")}>
+        <article className={cn("p-3 flex gap-x-3 rounded-lg border-2 group", isUser && "flex-row-reverse ml-auto", isUser ? "bg-primary-600 text-white border-white rounded-br-none" : "bg-white text-primary-600 border-primary-600 rounded-bl-none")}>
             <div className="mt-[4px]">
                 {
                     isUser ? (
