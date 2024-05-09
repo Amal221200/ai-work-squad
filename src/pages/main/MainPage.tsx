@@ -4,7 +4,7 @@ import InputSection from "./components/InputSection"
 
 const MainPage = () => {
   return (
-    <main className="sm:col-span-2 lg:col-span-4 md:col-span-3">
+    <main className="space-y-3 sm:col-span-2 lg:col-span-4 md:col-span-3">
         <ChatSection />
         <InputSection />
     </main>
