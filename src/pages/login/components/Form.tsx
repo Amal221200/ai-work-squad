@@ -29,11 +29,11 @@ const Form = () => {
 
 
     return (
-        <div className='bg-[#171A1FFF] rounded-r-md max-w-lg sm:w-[60vw] w-[90vw] h-[80%] p-6 mx-auto flex flex-col items-center gap-y-3'>
+        <div className='bg-[#171A1FFF] rounded-r-md max-w-lg sm:w-[60vw] w-[90vw] h-[80%] sm:p-6 p-3 mx-auto flex flex-col items-center gap-y-3'>
             <h1 className="text-2xl font-bold">Welcome Back</h1>
             <p>Sign In to continue to Aiworksquad</p>
 
-            <form className="flex flex-col gap-y-3 mt-5 w-[80%]" onSubmit={handleSubmit}>
+            <form className="flex flex-col gap-y-3 mt-5 sm:w-[80%] w-[85%]" onSubmit={handleSubmit}>
                 <div className="bg-[#171A1FFF] border rounded flex gap-x-3 px-4 py-2">
                     <User className="text-gray-400" />
                     <input type="text" name="username" placeholder="Username" className="w-full bg-transparent outline-none" required />
@@ -42,12 +42,12 @@ const Form = () => {
                     <LockKeyhole className="text-gray-400" />
                     <input type="password" name="password" placeholder="Password" className="w-full bg-transparent outline-none" required />
                 </div>
-                <footer className="flex justify-between items-center font-semibold text-[.9rem]">
+                <footer className="flex justify-between items-center font-semibold flex-wrap text-[.9rem] gap-y-2">
                     <div className="flex items-center gap-x-1">
                         <input type="checkbox" name="" id="remeber-me" />
                         <label htmlFor="remeber-me" className="">Remember Me</label>
                     </div>
-                    <div>
+                    <div className="w-full text-center sm:text-right">
                         <Link to="#" className="text-gray-400">Forgot Password?</Link>
                     </div>
                 </footer>
