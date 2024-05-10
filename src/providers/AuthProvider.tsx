@@ -9,9 +9,9 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const cookie = JSON.parse(localStorage.getItem('ai_login') || '{username:""}');
-        setUserData(cookie.username ? cookie : null)
-        if (!cookie) {
+        const cookie = JSON.parse(localStorage.getItem('ai_login') || '{"username": ""}');
+        setUserData(cookie.username === '' ? cookie : null)
+        if (!cookie.username.length) {
             navigate('/login')
         }
     }, [navigate])
