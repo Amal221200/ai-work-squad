@@ -4,8 +4,15 @@ import { AuthContext } from "../../../providers/AuthProvider"
 import { AuthContextType } from "../../../utils/types"
 import { CircleHelp, Copy, ExternalLink, FileDown, Mail, MessageSquareText } from "lucide-react"
 
+interface ChatBoxProps {
+    chatData: {
+        id: string,
+        user: string,
+        data: string
+    }
+}
 
-const ChatBox = ({ chatData }: { chatData: { id: string, user: string, data: string } }) => {
+const ChatBox = ({ chatData }: ChatBoxProps) => {
     const { userData } = useContext(AuthContext) as AuthContextType;
     const isUser = userData?.username === chatData.user
     return (
@@ -22,10 +29,10 @@ const ChatBox = ({ chatData }: { chatData: { id: string, user: string, data: str
                     {chatData.data}
                 </p>
                 <div className={cn("flex gap-x-2 justify-end p-1 invisible group-hover:visible", isUser && "hidden")}>
-                    <Copy  size={18} className="text-black transition-colors cursor-pointer hover:text-primary-600"/>
-                    <ExternalLink  size={18} className="text-black transition-colors cursor-pointer hover:text-primary-600"/>
+                    <Copy size={18} className="text-black transition-colors cursor-pointer hover:text-primary-600" />
+                    <ExternalLink size={18} className="text-black transition-colors cursor-pointer hover:text-primary-600" />
                     <FileDown size={18} className="text-black transition-colors cursor-pointer hover:text-primary-600" />
-                    <Mail  size={18} className="text-black transition-colors cursor-pointer hover:text-primary-600"/>
+                    <Mail size={18} className="text-black transition-colors cursor-pointer hover:text-primary-600" />
                 </div>
             </div>
         </article>
