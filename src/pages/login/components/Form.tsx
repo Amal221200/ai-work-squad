@@ -36,7 +36,7 @@ const Form = () => {
             <form className="flex flex-col gap-y-3 mt-5 sm:w-[80%] w-[85%]" onSubmit={handleSubmit}>
                 <div className="bg-[#171A1FFF] border rounded flex gap-x-3 px-4 py-2">
                     <User className="text-gray-400" />
-                    <input type="text" name="username" placeholder="Username" className="w-full bg-transparent outline-none" required />
+                    <input type="text" name="username" placeholder="Username" autoComplete="off" className="w-full bg-transparent outline-none" required />
                 </div>
                 <div className="bg-[#171A1FFF] border rounded flex gap-x-3 px-4 py-2">
                     <LockKeyhole className="text-gray-400" />

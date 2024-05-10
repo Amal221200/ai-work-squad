@@ -6,7 +6,7 @@ import LoginHeader from './components/Header';
 
 const LoginPage = () => {
   return (
-    <div className='h-full' id="login">
+    <div className='h-[100dvh]' id="login">
         <LoginHeader />
         <main className='h-[calc(100%-120px)]'>
             <Form />

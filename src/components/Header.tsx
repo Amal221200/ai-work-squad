@@ -17,7 +17,7 @@ const Header = () => {
         onOpen()
     }, [open, onClose, onOpen])
     
-    const toggleDropDown = useCallback((e:React.MouseEvent<HTMLLIElement, MouseEvent>)=> {
+    const onSelectDropDown = useCallback((e:React.MouseEvent<HTMLLIElement, MouseEvent>)=> {
         e.stopPropagation()
         onDepartmentChange(e.currentTarget.textContent!)
         setDropDownOpen(false)  
@@ -36,13 +36,13 @@ const Header = () => {
                 </div>
             </div>
             <div className="flex items-center gap-x-3">
-                <button type="button" className="relative col-span-2 p-2 bg-white border-2 border-black rounded" onClick={()=> setDropDownOpen(true)}>
+                <button type="button" className="relative col-span-2 p-2 bg-white border-2 border-black rounded" onClick={()=> setDropDownOpen(current => !current)}>
                     <span className="hidden sm:inline">Department:</span> {current}
                     {
                         dropDownOpen && (
-                            <ul className="absolute left-0 right-0 -bottom-[125%] w-max bg-gray-100 rounded overflow-hidden">
-                                <li className="w-full px-2 text-left transition-colors hover:bg-gray-200" onClick={toggleDropDown}>Sales</li>
-                                <li className="w-full px-2 text-left transition-colors hover:bg-gray-200" onClick={toggleDropDown}>
+                            <ul className="absolute left-0 right-0 -bottom-[125%] w-max sm:w-full bg-gray-100 rounded overflow-hidden">
+                                <li className="w-full px-2 text-left transition-colors hover:bg-gray-200" onClick={onSelectDropDown}>Sales</li>
+                                <li className="w-full px-2 text-left transition-colors hover:bg-gray-200" onClick={onSelectDropDown}>
                                     Marketing
                                 </li>
                             </ul>
